@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,nofollow">
+<title>Profil de financement Kibira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  /* canvas */
+  --bg:#F6F8F7; --surface:#FFFFFF; --surface-2:#EFF3F1; --surface-3:#E4EBE7;
+  --line:#E0E6E3; --line-strong:#C6CFCB;
+  --ink:#1C2320; --ink-2:#55605B; --ink-3:#828C87;
+  --display:#1B3A2C;
+  --green:#2E6B4A; --green-ink:#245740; --green-soft:#E6F1EB;
+  --gold:#2E6B4A; --gold-soft:#EDF2F0;
+  --notice:#8A6A1E; --notice-soft:#F6F1E1;
+  --clay:#9A3B1C;
+  /* chrome: graphite */
+  --chrome:#1E262A; --chrome-2:#273338; --chrome-line:#374850; --chrome-hover:#273338;
+  --chrome-ink:#E9EFEC; --chrome-ink-2:#9FB2AC; --chrome-ink-3:#7A8D88;
+  --chrome-accent:#7FBF9A; --chrome-on:#132420;
+  --shadow:0 1px 2px rgba(28,35,32,.05), 0 10px 26px -14px rgba(28,35,32,.24);
+  --shadow-lift:0 2px 5px rgba(28,35,32,.08), 0 22px 46px -20px rgba(28,35,32,.34);
+  --focus:#2E6B4A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1412; --surface:#151C19; --surface-2:#1C2420; --surface-3:#25302B;
+    --line:#28332E; --line-strong:#3B4A44;
+    --ink:#E9EFEC; --ink-2:#A8B8B2; --ink-3:#7E8D88;
+    --display:#A8D8BE;
+    --green:#6FB58A; --green-ink:#8ACBA4; --green-soft:#16241D;
+    --gold:#8ACBA4; --gold-soft:#1A2320;
+    --notice:#D5A94A; --notice-soft:#26210F;
+    --clay:#E38562;
+    --chrome:#0C1211; --chrome-2:#131B18; --chrome-line:#24302B; --chrome-hover:#1A2320;
+    --chrome-ink:#E9EFEC; --chrome-ink-2:#96A9A3; --chrome-ink-3:#71827D;
+    --chrome-accent:#7FBF9A; --chrome-on:#132420;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 26px -14px rgba(0,0,0,.8);
+    --shadow-lift:0 2px 5px rgba(0,0,0,.6), 0 22px 46px -20px rgba(0,0,0,.9);
+    --focus:#8ACBA4;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#0E1412; --surface:#151C19; --surface-2:#1C2420; --surface-3:#25302B;
+  --line:#28332E; --line-strong:#3B4A44;
+  --ink:#E9EFEC; --ink-2:#A8B8B2; --ink-3:#7E8D88;
+  --display:#A8D8BE;
+  --green:#6FB58A; --green-ink:#8ACBA4; --green-soft:#16241D;
+  --gold:#8ACBA4; --gold-soft:#1A2320;
+  --notice:#D5A94A; --notice-soft:#26210F;
+  --clay:#E38562;
+  --chrome:#0C1211; --chrome-2:#131B18; --chrome-line:#24302B; --chrome-hover:#1A2320;
+  --chrome-ink:#E9EFEC; --chrome-ink-2:#96A9A3; --chrome-ink-3:#71827D;
+  --chrome-accent:#7FBF9A; --chrome-on:#132420;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 26px -14px rgba(0,0,0,.8);
+  --shadow-lift:0 2px 5px rgba(0,0,0,.6), 0 22px 46px -20px rgba(0,0,0,.9);
+  --focus:#8ACBA4;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size:16.5px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:Newsreader, ui-serif, Georgia, "Times New Roman", serif; color:var(--display); margin:0; text-wrap:balance; font-optical-sizing:auto}
+:focus-visible{outline:2.5px solid var(--focus); outline-offset:2px; border-radius:4px}
+button{font:inherit; color:inherit; cursor:pointer}
+input,select,textarea{font:inherit; color:inherit}
+.mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric:tabular-nums}
+
+.topbar{
+  position:sticky; top:0; z-index:60; background:var(--chrome);
+  border-bottom:1px solid var(--chrome-line); display:flex; align-items:center; gap:16px;
+  padding:11px 22px; min-height:64px; color:var(--chrome-ink);
+}
+.brand{display:flex; align-items:center; gap:12px; min-width:0}
+.brand svg{flex:none; display:block}
+.brand-name{font-family:Newsreader,serif; font-weight:600; font-size:18px; letter-spacing:-.005em; color:var(--chrome-ink); line-height:1.15; white-space:nowrap}
+.brand-sub{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--chrome-accent); font-weight:700; margin-top:2px}
+.topbar-spacer{flex:1}
+.saveflag{
+  display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--chrome-ink-2);
+  background:var(--chrome-2); border:1px solid var(--chrome-line); border-radius:999px; padding:5px 13px 5px 10px; white-space:nowrap;
+}
+.saveflag .dot{width:7px;height:7px;border-radius:50%;background:var(--chrome-accent);flex:none}
+.saveflag.saving .dot{background:var(--notice)}
+.langtog{display:flex; border:1px solid var(--chrome-line); border-radius:999px; overflow:hidden; background:var(--chrome-2)}
+.langtog button{border:0; background:transparent; padding:5px 14px; font-size:12.5px; font-weight:700; color:var(--chrome-ink-3); letter-spacing:.06em}
+.langtog button:hover{color:var(--chrome-ink)}
+.langtog button[aria-pressed="true"]{background:var(--chrome-accent); color:var(--chrome-on)}
+.iconbtn{border:1px solid var(--chrome-line); background:var(--chrome-2); border-radius:9px; width:36px; height:34px; display:grid; place-items:center; color:var(--chrome-ink-2)}
+.iconbtn:hover{background:var(--chrome-line); color:var(--chrome-ink)}
+
+.shell{display:grid; grid-template-columns:290px minmax(0,1fr); align-items:start}
+.rail{
+  position:sticky; top:64px; height:calc(100dvh - 64px); overflow-y:auto;
+  border-right:1px solid var(--chrome-line); background:var(--chrome);
+  padding:22px 14px 24px; display:flex; flex-direction:column; gap:3px; color:var(--chrome-ink-2);
+}
+.rail-head{padding:2px 9px 14px; display:flex; flex-direction:column; gap:9px}
+.rail-title{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--chrome-ink-3); font-weight:700}
+.overall{display:flex; align-items:baseline; gap:9px}
+.overall b{font-family:Newsreader,serif; font-size:34px; font-weight:600; color:var(--chrome-ink); line-height:1}
+.overall span{font-size:12.5px; color:var(--chrome-ink-3)}
+.bar{height:5px; background:var(--chrome-line); border-radius:99px; overflow:hidden}
+.bar i{display:block; height:100%; background:var(--chrome-accent); border-radius:99px; transition:width .4s cubic-bezier(.4,0,.2,1)}
+.navitem{
+  display:grid; grid-template-columns:20px 1fr auto; align-items:center; gap:11px;
+  border:0; background:transparent; text-align:left; width:100%;
+  padding:9px 10px; border-radius:9px; color:var(--chrome-ink-2); font-size:14.4px; line-height:1.32;
+}
+.navitem:hover{background:var(--chrome-2); color:var(--chrome-ink)}
+.navitem[aria-current="true"]{background:var(--chrome-accent); color:var(--chrome-on); font-weight:600}
+.navnum{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--chrome-ink-3); text-align:center}
+.navitem[aria-current="true"] .navnum{color:#2C5445}
+.navring{width:17px;height:17px;flex:none}
+.navring circle{fill:none; stroke-width:3}
+.navring .trk{stroke:var(--chrome-line)}
+.navring .val{stroke:var(--chrome-accent); stroke-linecap:round; transform:rotate(-90deg); transform-origin:50% 50%; transition:stroke-dasharray .4s ease}
+.navitem[aria-current="true"] .navring .trk{stroke:rgba(19,36,32,.26)}
+.navitem[aria-current="true"] .navring .val{stroke:var(--chrome-on)}
+.rail-foot{margin-top:auto; padding:16px 9px 0; border-top:1px solid var(--chrome-line); display:flex; flex-direction:column; gap:6px}
+.railbtn{border:1px solid var(--chrome-line); background:transparent; border-radius:9px; padding:8px 12px; font-size:13.4px; color:var(--chrome-ink-2); text-align:left; display:flex; align-items:center; gap:10px}
+.railbtn:hover{border-color:var(--chrome-accent); color:var(--chrome-ink); background:var(--chrome-2)}
+.railbtn svg{flex:none; color:var(--chrome-ink-3)}
+.railbtn:hover svg{color:var(--chrome-accent)}
+
+.main{padding:38px 44px 130px; max-width:860px}
+.eyebrow{font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; font-weight:700; color:var(--gold); display:flex; align-items:center; gap:11px; margin-bottom:13px}
+.eyebrow .rule{height:1px; background:var(--line-strong); flex:1; max-width:56px}
+h2.sec-title{font-size:clamp(28px,3.6vw,38px); font-weight:600; letter-spacing:-.018em; line-height:1.1}
+.sec-intro{color:var(--ink-2); font-size:16.5px; max-width:60ch; margin-top:12px}
+
+.qlist{display:flex; flex-direction:column; margin-top:28px}
+.q{border:1px solid var(--line); background:var(--surface); border-radius:13px; padding:18px 20px; display:flex; flex-direction:column; gap:11px; transition:border-color .18s, box-shadow .18s}
+.q + .q{margin-top:13px}
+.q:focus-within{border-color:var(--green); box-shadow:var(--shadow)}
+.q.done{border-left:3px solid var(--green); padding-left:18px}
+.qlab{display:flex; align-items:flex-start; gap:12px}
+.qnum{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--gold); padding-top:4px; flex:none; min-width:22px; font-weight:500}
+.qtext{font-size:16.5px; font-weight:600; color:var(--ink); line-height:1.42}
+.qtext .req{color:var(--clay); font-weight:400}
+.qhint{font-size:13.8px; color:var(--ink-3); margin:-4px 0 0 34px; max-width:62ch; line-height:1.5}
+.qbody{margin-left:34px}
+@media (max-width:640px){ .qhint,.qbody{margin-left:0} }
+
+input[type=text], input[type=number], textarea, select{
+  width:100%; background:var(--surface-2); border:1px solid var(--line-strong);
+  border-radius:9px; padding:10px 13px; font-size:15.5px; color:var(--ink);
+  transition:border-color .15s, background .15s;
+}
+textarea{min-height:90px; resize:vertical; line-height:1.55}
+input:focus, textarea:focus, select:focus{border-color:var(--green); background:var(--surface)}
+input::placeholder, textarea::placeholder{color:var(--ink-3); opacity:.7}
+.opts{display:flex; flex-direction:column; gap:7px}
+.opts.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:7px}
+.opt{display:flex; align-items:flex-start; gap:10px; border:1px solid var(--line-strong); background:var(--surface-2); border-radius:9px; padding:9px 13px; font-size:14.9px; cursor:pointer; line-height:1.42; transition:border-color .15s, background .15s}
+.opt:hover{border-color:var(--green)}
+.opt input{margin:3px 0 0; accent-color:var(--green); flex:none; width:16px; height:16px}
+.opt.sel{background:var(--green-soft); border-color:var(--green); color:var(--green-ink); font-weight:600}
+.otherbox{margin-top:9px; padding-left:13px; border-left:2px solid var(--green)}
+.otherbox input{background:var(--surface)}
+.money{display:flex; align-items:center}
+.money span{background:var(--surface-3); border:1px solid var(--line-strong); border-right:0; border-radius:9px 0 0 9px; padding:10px 13px; font-size:13.5px; color:var(--ink-2); font-weight:700; letter-spacing:.04em}
+.money input{border-radius:0 9px 9px 0}
+
+/* repeatable project cards */
+.grp{display:flex; flex-direction:column; gap:12px}
+.grp-card{border:1px solid var(--line-strong); background:var(--surface-2); border-radius:12px; padding:15px 16px; display:flex; flex-direction:column; gap:11px; position:relative}
+.grp-head{display:flex; align-items:center; justify-content:space-between; gap:10px}
+.grp-head b{font-family:Newsreader,serif; font-size:15.5px; color:var(--display); font-weight:600}
+.grp-del{border:1px solid var(--line-strong); background:var(--surface); border-radius:8px; width:30px; height:30px; display:grid; place-items:center; color:var(--ink-3); font-size:16px; line-height:1}
+.grp-del:hover{border-color:var(--clay); color:var(--clay)}
+.grp-fields{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:10px}
+.grp-f{display:flex; flex-direction:column; gap:5px}
+.grp-f.wide{grid-column:1/-1}
+.grp-f label{font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:700}
+.grp-f input, .grp-f textarea{background:var(--surface); padding:8px 11px; font-size:14.8px}
+.grp-f textarea{min-height:62px}
+.grp-add{align-self:flex-start; border:1px dashed var(--line-strong); background:transparent; border-radius:9px; padding:9px 16px; font-size:13.8px; color:var(--green-ink); font-weight:600}
+.grp-add:hover{border-color:var(--green); background:var(--green-soft)}
+
+.pager{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:34px; flex-wrap:wrap}
+.btn{border:1px solid var(--line-strong); background:var(--surface); border-radius:10px; padding:11px 19px; font-size:15px; font-weight:600; color:var(--ink); display:inline-flex; align-items:center; gap:9px; transition:border-color .15s, background .15s}
+.btn:hover{border-color:var(--green)}
+.btn.primary{background:var(--green); border-color:var(--green); color:#F6F8F7}
+:root[data-theme="dark"] .btn.primary{color:#0E1412}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0E1412}}
+.btn.primary:hover{background:var(--green-ink); border-color:var(--green-ink)}
+.btn:disabled{opacity:.35; cursor:not-allowed}
+.btn.big{padding:14px 28px; font-size:16.5px}
+
+.toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(16px); background:#1E262A; color:#E9EFEC; padding:13px 22px; border-radius:11px; font-size:14.6px; box-shadow:var(--shadow-lift); opacity:0; pointer-events:none; transition:opacity .22s, transform .22s; z-index:200; max-width:min(540px,92vw); text-align:center}
+:root[data-theme="dark"] .toast{background:#E4EDE9; color:#132420}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .toast{background:#E4EDE9; color:#132420}}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+@media (prefers-reduced-motion: reduce){*{transition:none !important; animation:none !important}}
+
+dialog{border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:16px; padding:0; max-width:min(560px,93vw); box-shadow:var(--shadow-lift)}
+dialog::backdrop{background:rgba(12,22,20,.6)}
+.dlg{padding:26px 28px 24px; display:flex; flex-direction:column; gap:15px}
+.dlg h3{font-size:23px; font-weight:600}
+.dlg p{margin:0; color:var(--ink-2); font-size:15px}
+.dlg-actions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap}
+.note{background:var(--notice-soft); border:1px solid color-mix(in srgb, var(--notice) 34%, transparent); border-radius:10px; padding:13px 15px; font-size:14.2px; color:var(--ink-2)}
+.note b{color:var(--ink)}
+
+.open-lede{font-size:19.5px; line-height:1.55; color:var(--ink); max-width:57ch; margin:18px 0 0; font-family:Newsreader,serif; font-weight:400}
+.open-meta{display:flex; gap:24px; flex-wrap:wrap; margin-top:26px; font-size:14.4px; color:var(--ink-2)}
+.open-meta div{display:flex; align-items:center; gap:9px}
+.open-meta svg{color:var(--green); flex:none}
+
+.prof{border:1px solid var(--line); background:var(--surface); border-radius:14px; padding:34px 38px; margin-top:24px; box-shadow:var(--shadow)}
+.prof h1{font-size:32px; font-weight:600; letter-spacing:-.02em}
+.prof .ph-sub{font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:9px}
+.prof h4{font-family:"Source Sans 3",sans-serif; font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--green-ink); font-weight:700; margin:28px 0 10px; padding-bottom:7px; border-bottom:1px solid var(--line)}
+.prof p.lead{font-size:17px; color:var(--ink); font-family:Newsreader,serif; line-height:1.5; margin-bottom:12px}
+.prof p{margin:0 0 10px; font-size:15.2px; color:var(--ink-2); line-height:1.62; max-width:66ch; white-space:pre-wrap}
+.prof .dl{display:grid; grid-template-columns:minmax(155px,auto) 1fr; gap:8px 22px; font-size:14.8px}
+.prof .dl dt{color:var(--ink-3)}
+.prof .dl dd{margin:0; color:var(--ink); font-weight:600}
+.prof .miss{color:var(--clay); font-weight:400; font-style:italic}
+.prof .chips{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px}
+.prof .chips span{font-size:13px; background:var(--green-soft); color:var(--green-ink); border:1px solid color-mix(in srgb, var(--green) 30%, transparent); border-radius:99px; padding:3px 12px; font-weight:600}
+.prof .pcard{border:1px solid var(--line); border-radius:10px; padding:13px 15px; margin-bottom:9px; background:var(--surface-2)}
+.prof .pcard b{display:block; font-size:15.4px; color:var(--ink); margin-bottom:5px; font-family:Newsreader,serif; font-weight:600}
+.prof .pcard span{display:block; font-size:13.8px; color:var(--ink-2)}
+.prof .contactline{margin-top:10px; padding-bottom:4px; font-size:14px; color:var(--ink-2); display:flex; flex-wrap:wrap; align-items:center; gap:0 4px}
+.prof .contactline .sep{color:var(--gold); margin:0 7px; font-weight:700}
+.profbar{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:22px}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static; height:auto; border-right:0; border-bottom:1px solid var(--line)}
+  .rail.collapsed .navitem, .rail.collapsed .rail-foot{display:none}
+  .main{padding:28px 20px 110px}
+}
+@media print{
+  .topbar,.rail,.pager,.toast,.profbar{display:none !important}
+  .main{padding:0; max-width:none}
+  .prof{border:0; box-shadow:none; padding:0}
+  body{background:#fff; color:#000}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">
+    <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true">
+      <g fill="#7FBF9A">
+        <ellipse cx="20" cy="9"  rx="5.4" ry="3.4" transform="rotate(-14 20 9)"/>
+        <ellipse cx="12.4" cy="13.6" rx="5.2" ry="3.2" transform="rotate(20 12.4 13.6)"/>
+        <ellipse cx="27.6" cy="13.6" rx="5.2" ry="3.2" transform="rotate(-20 27.6 13.6)"/>
+        <ellipse cx="8.6" cy="20.4" rx="4.8" ry="3" transform="rotate(-8 8.6 20.4)"/>
+        <ellipse cx="31.4" cy="20.4" rx="4.8" ry="3" transform="rotate(8 31.4 20.4)"/>
+        <ellipse cx="20" cy="17.6" rx="5.6" ry="3.6" transform="rotate(6 20 17.6)"/>
+      </g>
+      <path d="M19.2 33 C19.2 27 18 24 16.6 21.6 C18.6 23.4 19.8 25 20.6 27 L20.6 33 Z" fill="#E9EFEC"/>
+      <g fill="#E9EFEC">
+        <circle cx="13.2" cy="26.4" r="2"/><circle cx="20" cy="25.2" r="2"/><circle cx="26.8" cy="26.4" r="2"/>
+        <path d="M13.2 28.6 c-1.9 0-3.2 1.4-3.2 3.1 l0 1.6 c0 .5 .5 .8 1 .6 l1 -.4 0 3.3 c0 .5 .4 .9 .9 .9 l.8 0 c.5 0 .9-.4 .9-.9 l0-8.2 z"/>
+        <path d="M26.8 28.6 c1.9 0 3.2 1.4 3.2 3.1 l0 1.6 c0 .5-.5 .8-1 .6 l-1-.4 0 3.3 c0 .5-.4 .9-.9 .9 l-.8 0 c-.5 0-.9-.4-.9-.9 l0-8.2 z"/>
+        <path d="M17.4 27.4 h5.2 c1.6 0 2.8 1.3 2.8 2.9 l0 6.6 c0 .5-.4 .9-.9 .9 l-.9 0 c-.5 0-.9-.4-.9-.9 l0-4.6 -1.4 0 0 4.6 c0 .5-.4 .9-.9 .9 l-.9 0 c-.5 0-.9-.4-.9-.9 l0-4.6 -1.4 0 0 4.6 c0 .5-.4 .9-.9 .9 l-.9 0 c-.5 0-.9-.4-.9-.9 l0-6.6 c0-1.6 1.2-2.9 2.8-2.9 z"/>
+        <rect x="4" y="37" width="32" height="1.5" rx=".75"/>
+      </g>
+    </svg>
+    <div>
+      <div class="brand-name">Fondation Kibira</div>
+      <div class="brand-sub" data-i="brandsub">Profil de financement</div>
+    </div>
+  </div>
+  <div class="topbar-spacer"></div>
+  <div class="saveflag" id="saveflag"><span class="dot"></span><span id="savetxt">—</span></div>
+  <div class="langtog" role="group" aria-label="Language">
+    <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+  <button type="button" class="iconbtn" id="menubtn" aria-label="Sections">
+    <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+  </button>
+</div>
+
+<div class="shell">
+  <nav class="rail" id="rail" aria-label="Sections">
+    <div class="rail-head">
+      <div class="rail-title" data-i="progress">Avancement</div>
+      <div class="overall"><b id="pctnum">0%</b><span id="pctsub"></span></div>
+      <div class="bar"><i id="pctbar" style="width:0%"></i></div>
+    </div>
+    <div id="navlist"></div>
+    <div class="rail-foot" id="railfoot"></div>
+  </nav>
+  <main class="main" id="main"></main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+var LANG='fr';
+function L(s){ if(s==null) return ''; if(typeof s!=='string') return s; var i=s.indexOf('|'); return i<0?s:(LANG==='fr'?s.slice(0,i):s.slice(i+1)); }
+var UI={
+  brandsub:'Profil de financement|Funding profile',
+  progress:'Avancement|Progress',
+  answered:'sur %n questions|of %n questions',
+  saved:'Enregistré à %t|Saved at %t',
+  saving:'Enregistrement…|Saving…',
+  never:'Enregistrement automatique|Saves automatically',
+  next:'Suivant|Next', prev:'Précédent|Back',
+  save:'Sauvegarder pour reprendre|Save to continue later',
+  download:'Télécharger en PDF|Download as PDF',
+  upload:'Reprendre un fichier|Resume from a file',
+  reset:'Tout effacer|Clear everything',
+  profile:'Profil d’organisation|Organisation profile'
+};
+function T(k,v){ var s=L(UI[k]||k); if(v) for(var x in v) s=s.replace('%'+x.charAt(0), v[x]); return s; }
+
+var SECTIONS=[];
+
+SECTIONS.push({ id:'debut', kind:'brief', nav:'Commencer|Start' });
+
+SECTIONS.push({
+  id:'institutionnel',
+  nav:'Profil institutionnel|Institutional profile',
+  title:'Profil institutionnel|Institutional profile',
+  qs:[
+    {id:'reg_year', t:'text', req:1,
+     q:'En quelle année la Fondation a-t-elle été officiellement enregistrée ?|In what year was the Foundation officially registered?'},
+    {id:'legal_status', t:'text', req:1,
+     q:'Sous quel statut juridique est-elle enregistrée, et auprès de quelle institution ?|Under what legal status is it registered, and with which institution?'},
+    {id:'countries', t:'text', req:1,
+     q:'Dans quels pays la Fondation est-elle légalement enregistrée ou autorisée à intervenir ?|In which countries is the Foundation legally registered or authorised to operate?'},
+    {id:'foreign_funds', t:'one', req:1,
+     q:'La Fondation est-elle autorisée à recevoir directement des financements provenant de l’étranger ?|Is the Foundation authorised to receive funding directly from abroad?',
+     o:['Oui|Yes','Oui, sous certaines conditions|Yes, under certain conditions','Non|No','Je ne sais pas|I don’t know']}
+  ]
+});
+
+SECTIONS.push({
+  id:'mission',
+  nav:'Mission et domaines|Mission and fields of work',
+  title:'Mission et domaines d’intervention|Mission and fields of work',
+  qs:[
+    {id:'mission', t:'long', req:1,
+     q:'Quelle est la mission de la Fondation Kibira ?|What is Fondation Kibira’s mission?'},
+    {id:'domains', t:'many', req:1,
+     q:'Quels sont ses principaux domaines d’intervention ?|What are its main fields of work?',
+     o:['Conservation et biodiversité|Conservation and biodiversity','Restauration des paysages forestiers|Forest landscape restoration','Activités génératrices de revenus|Income-generating activities','Droits des peuples autochtones|Indigenous peoples’ rights','Consolidation de la paix et cohésion sociale|Peacebuilding and social cohesion','Écotourisme|Ecotourism','Agroforesterie et agriculture|Agroforestry and agriculture','Climat et carbone forestier|Climate and forest carbon','Patrimoine culturel|Cultural heritage','Eau et bassins versants|Water and catchments','Énergie|Energy','Éducation environnementale|Environmental education']},
+    {id:'domains_other', t:'text', nonum:1,
+     q:'Autres domaines, s’ils ne figurent pas ci-dessus|Other fields, if not listed above'},
+    {id:'priorities', t:'long', req:1,
+     q:'Parmi ces domaines, quelles sont les priorités de la Fondation pour les 2 à 3 prochaines années ?|Among those fields, what are the Foundation’s priorities for the next 2 to 3 years?'},
+    {id:'beneficiaries', t:'many', req:1, other:1,
+     q:'Quels sont les principaux groupes de bénéficiaires avec lesquels la Fondation travaille ou souhaite travailler ?|Which main beneficiary groups does the Foundation work with, or want to work with?',
+     o:['Communautés batwa|Batwa communities','Femmes|Women','Jeunes|Young people','Ménages agricoles|Farming households','Coopératives|Cooperatives','Écogardes|Eco-guards','Écoles et élèves|Schools and pupils','Artisans et artistes|Craftspeople and artists','Communautés riveraines du parc|Forest-edge communities','Autorités locales|Local authorities','Autre|Other']},
+    {id:'zones', t:'many', req:1, other:1,
+     q:'Dans quelles zones géographiques intervient-elle actuellement ?|In which geographic areas does it currently operate?',
+     o:['Kayanza|Kayanza','Cibitoke|Cibitoke','Bubanza|Bubanza','Muramvya|Muramvya','Ngozi|Ngozi','Kabarore|Kabarore','Muruta|Muruta','Bukinanyana|Bukinanyana','Rwegura / Mwokora|Rwegura / Mwokora','Teza|Teza','Bujumbura|Bujumbura','Autre|Other']},
+    {id:'scope', t:'one', req:1,
+     q:'La Fondation souhaite-t-elle principalement intervenir au Burundi, ou est-elle également ouverte à des projets régionaux ou internationaux ?|Does the Foundation want to work mainly in Burundi, or is it also open to regional or international projects?',
+     o:['Au Burundi uniquement|In Burundi only','Au Burundi en priorité, mais ouverte au régional|Burundi first, but open to regional work','Ouverte aux projets régionaux (Grands Lacs, Afrique de l’Est)|Open to regional projects (Great Lakes, East Africa)','Ouverte aux projets internationaux|Open to international projects']},
+    {id:'no_go', t:'long',
+     q:'Existe-t-il des domaines ou types de projets que la Fondation Kibira ne souhaite pas poursuivre, même si des financements sont disponibles ?|Are there fields or types of project Fondation Kibira does not wish to pursue, even where funding is available?'}
+  ]
+});
+
+SECTIONS.push({
+  id:'experience',
+  nav:'Expérience et capacité|Experience and capacity',
+  title:'Expérience et capacité démontrée|Demonstrated experience and capacity',
+  qs:[
+    {id:'projects_done', t:'group', req:1,
+     q:'Quels sont les principaux projets ou programmes réalisés par la Fondation Kibira au cours des dernières années ?|What are the main projects or programmes Fondation Kibira has delivered in recent years?',
+     h:'Pour les projets les plus importants, précisez brièvement chaque élément. Ajoutez autant de projets que nécessaire.|For the most significant projects, fill in each field briefly. Add as many projects as you need.',
+     addLabel:'+ Ajouter un projet|+ Add a project',
+     itemLabel:'Projet|Project',
+     fields:[
+       {k:'nom', l:'Intitulé du projet|Project title', wide:1},
+       {k:'domaine', l:'Domaine|Field'},
+       {k:'benef', l:'Bénéficiaires|Beneficiaries'},
+       {k:'periode', l:'Période|Period', ph:'2022–2024'},
+       {k:'budget', l:'Budget approximatif (USD)|Approximate budget (USD)', num:1},
+       {k:'bailleur', l:'Bailleur ou partenaire|Funder or partner'},
+       {k:'resultats', l:'Principaux résultats obtenus|Main results achieved', long:1, wide:1}
+     ]},
+    {id:'largest_project', t:'money', req:1,
+     q:'Quel est le plus grand projet en valeur financière que la Fondation Kibira ait déjà géré ?|What is the largest project by financial value that Fondation Kibira has managed?'},
+    {id:'achievements', t:'long', req:1,
+     q:'Quels sont les 3 à 5 résultats ou réalisations les plus importants que la Fondation Kibira peut mettre en avant auprès d’un potentiel bailleur ou partenaire ?|What are the 3 to 5 most important results or achievements Fondation Kibira can put to a prospective funder or partner?'},
+    {id:'partners_past', t:'long', req:1,
+     q:'Avec quels types de partenaires ou bailleurs la Fondation a-t-elle déjà travaillé ? Merci d’indiquer les principaux.|What types of partners or funders has the Foundation already worked with? Please name the main ones.'},
+    {id:'intl_funds', t:'long', req:1,
+     q:'La Fondation a-t-elle déjà géré directement des fonds provenant d’un bailleur international ? Si oui, lesquels et pour quels montants approximatifs ?|Has the Foundation directly managed funds from an international donor? If so, which ones and for roughly how much?'}
+  ]
+});
+
+SECTIONS.push({
+  id:'financier',
+  nav:'Capacité financière|Financial capacity',
+  title:'Capacité financière et taille des opportunités|Financial capacity and scale of opportunities',
+  qs:[
+    {id:'annual_budget', t:'long', req:1,
+     q:'Quel a été approximativement le budget annuel de la Fondation au cours des trois dernières années ?|Roughly what has the Foundation’s annual budget been over the last three years?',
+     h:'Une ligne par année suffit.|One line per year is enough.'},
+    {id:'largest_external', t:'money', req:1,
+     q:'Quel est le montant du plus grand financement externe reçu par la Fondation Kibira à ce jour ?|What is the largest external grant Fondation Kibira has received to date?'},
+    {id:'manageable_size', t:'one', req:1,
+     q:'Quel montant de projet estimez-vous que la Fondation Kibira pourrait gérer aujourd’hui de manière réaliste ?|What size of project do you consider Fondation Kibira could realistically manage today?',
+     o:['Jusqu’à 100 000 USD|Up to 100,000 USD','100 000 à 300 000 USD|100,000 to 300,000 USD','300 000 à 700 000 USD|300,000 to 700,000 USD','700 000 USD à 1,5 M USD|700,000 USD to 1.5M USD','Au-delà de 1,5 M USD|Over 1.5M USD','Au-delà de 1,5 M USD, en consortium|Over 1.5M USD, in consortium']},
+    {id:'prefinance', t:'long', req:1,
+     q:'La Fondation peut-elle préfinancer des activités lorsque le mécanisme du bailleur fonctionne par remboursement ? Si oui, jusqu’à quel montant approximatif ?|Can the Foundation pre-finance activities where the donor reimburses in arrears? If so, up to roughly what amount?'},
+    {id:'cofinance', t:'many', req:1,
+     q:'La Fondation peut-elle apporter un cofinancement lorsque celui-ci est exigé par un bailleur ? Si oui, sous quelle forme ?|Can the Foundation provide co-financing where a donor requires it? If so, in what form?',
+     o:['Contribution financière|Cash contribution','Personnel|Staff time','Locaux|Premises','Équipements|Equipment','Terrains|Land','Autre|Other','Non, pas de cofinancement possible|No, co-financing is not possible']},
+    {id:'audit', t:'long', req:1,
+     q:'Les comptes de la Fondation ont-ils déjà fait l’objet d’un audit externe ? Si oui, pour quelles années ?|Have the Foundation’s accounts been externally audited? If so, for which years?'}
+  ]
+});
+
+SECTIONS.push({
+  id:'partenariats',
+  nav:'Partenariats|Partnerships',
+  title:'Partenariats et consortiums|Partnerships and consortia',
+  qs:[
+    {id:'consortium', t:'one', req:1,
+     q:'La Fondation Kibira est-elle ouverte à répondre à des appels à projets en consortium avec d’autres organisations ?|Is Fondation Kibira open to responding to calls for proposals in consortium with other organisations?',
+     o:['Oui|Yes','Oui, selon l’appel et les partenaires|Yes, depending on the call and the partners','Non|No']},
+    {id:'junior', t:'one', req:1,
+     q:'Est-elle ouverte à intervenir comme partenaire junior ou sous-bénéficiaire lorsqu’une autre organisation est chef de file ?|Is it open to acting as a junior partner or sub-grantee where another organisation leads?',
+     o:['Oui|Yes','Oui, selon les cas|Yes, case by case','Non, chef de file uniquement|No, lead applicant only']},
+    {id:'partners_now', t:'long', req:1,
+     q:'Existe-t-il des organisations avec lesquelles la Fondation Kibira travaille déjà et avec lesquelles elle pourrait envisager de répondre conjointement à des opportunités ?|Are there organisations Fondation Kibira already works with and could consider applying alongside?'},
+    {id:'consortium_strengths', t:'many', req:1,
+     q:'Quelles sont les principales forces ou ressources que la Fondation Kibira pourrait apporter à un consortium ?|What main strengths or resources could Fondation Kibira bring to a consortium?',
+     o:['Expertise technique particulière|Specific technical expertise','Réseau|Network','Accès aux communautés|Access to communities','Connaissance du terrain|Field knowledge','Infrastructures|Facilities','Relations institutionnelles|Institutional relationships','Mandat officiel sur le parc|Official mandate over the park','Capacité de mise en œuvre|Delivery capacity','Autre|Other']}
+  ]
+});
+
+SECTIONS.push({
+  id:'financer',
+  nav:'Ce que vous voulez financer|What you want funded',
+  title:'Ce que la Fondation Kibira veut financer|What Fondation Kibira wants funded',
+  qs:[
+    {id:'future_projects', t:'long', req:1,
+     q:'Quels sont les principaux projets ou initiatives que la Fondation Kibira souhaiterait financer au cours des 2 à 3 prochaines années ?|What are the main projects or initiatives Fondation Kibira would like funded over the next 2 to 3 years?'},
+    {id:'project_details', t:'group', req:1,
+     q:'Pour chaque projet ou initiative, pouvez-vous préciser les éléments suivants ?|For each project or initiative, could you set out the following?',
+     addLabel:'+ Ajouter une initiative|+ Add an initiative',
+     itemLabel:'Initiative|Initiative',
+     fields:[
+       {k:'titre', l:'Intitulé|Title', wide:1},
+       {k:'objectif', l:'Objectif principal|Main objective', long:1, wide:1},
+       {k:'benef', l:'Bénéficiaires visés|Target beneficiaries'},
+       {k:'zone', l:'Zone géographique|Geographic area'},
+       {k:'activites', l:'Principales activités envisagées|Main activities planned', long:1, wide:1},
+       {k:'budget', l:'Budget approximatif nécessaire (USD)|Approximate budget needed (USD)', num:1}
+     ]},
+    {id:'designed_projects', t:'long', req:1,
+     q:'Certains de ces projets sont-ils déjà conçus ou en cours, mais nécessitent des financements supplémentaires ?|Are any of these projects already designed or under way, but in need of additional funding?'},
+    {id:'funding_types', t:'many', req:1,
+     q:'La Fondation recherche-t-elle uniquement du financement pour des projets, ou également d’autres types de financement ?|Is the Foundation looking only for project funding, or for other types as well?',
+     o:['Financement de projets|Project funding','Financement institutionnel / core funding|Institutional or core funding','Équipements|Equipment','Infrastructures|Infrastructure','Renforcement des capacités|Capacity building','Recherche et études|Research and studies','Fonds d’urgence ou de transition|Bridge or emergency funding','Autre|Other']},
+    {id:'total_target', t:'money', req:1,
+     q:'Quel montant total de financement la Fondation Kibira aimerait-elle idéalement mobiliser au cours des 12 à 24 prochains mois ?|What total amount would Fondation Kibira ideally like to raise over the next 12 to 24 months?'}
+  ]
+});
+
+SECTIONS.push({
+  id:'positionnement',
+  nav:'Positionnement|Positioning',
+  title:'Positionnement de la Fondation Kibira|Fondation Kibira’s positioning',
+  qs:[
+    {id:'why_us', t:'long', req:1,
+     q:'Pourquoi un bailleur ou un partenaire devrait-il choisir la Fondation Kibira pour mettre en œuvre un projet ?|Why should a funder or partner choose Fondation Kibira to deliver a project?'},
+    {id:'differentiators', t:'long', req:1,
+     q:'Quelles sont les 3 principales forces qui distinguent la Fondation Kibira des autres organisations travaillant dans des domaines similaires ?|What are the 3 main strengths that set Fondation Kibira apart from other organisations working in similar fields?'},
+    {id:'anything_else', t:'long',
+     q:'Y a-t-il des caractéristiques particulières de la Fondation Kibira que nous devrions connaître pour identifier les opportunités qui lui correspondent le mieux ?|Are there any particular features of Fondation Kibira we should know about in order to identify the opportunities that suit it best?'}
+  ]
+});
+
+SECTIONS.push({
+  id:'envoi', kind:'finish',
+  nav:'Coordonnées|Contact details',
+  title:'Coordonnées et transmission|Contact details and submission',
+  intro:'Ces coordonnées figureront sur le profil d’organisation que vous pourrez adresser à un bailleur. Vos réponses restent enregistrées sur cet appareil : pour nous les transmettre, téléchargez le fichier de sauvegarde et envoyez-le-nous.|These details will appear on the organisation profile you can send to a funder. Your answers stay stored on this device: to send them to us, download the save file and forward it.',
+  qs:[
+    {id:'org_website', t:'text', q:'Site web de la Fondation|Foundation website', ph:'www.'},
+    {id:'org_email', t:'text', q:'Adresse électronique générale|General email address'},
+    {id:'org_phone', t:'text', q:'Téléphone|Telephone'},
+    {id:'org_address', t:'text', q:'Adresse du siège|Registered address'},
+    {id:'org_social', t:'group',
+     q:'Réseaux sociaux|Social media',
+     h:'Une ligne par plateforme.|One line per platform.',
+     addLabel:'+ Ajouter un réseau|+ Add a platform',
+     itemLabel:'Réseau|Platform',
+     fields:[
+       {k:'plateforme', l:'Plateforme|Platform', ph:'LinkedIn'},
+       {k:'lien', l:'Identifiant ou lien|Handle or link', wide:1}
+     ]},
+    {id:'resp_name', t:'text', req:1, q:'Votre nom|Your name'},
+    {id:'resp_role', t:'text', req:1, q:'Votre fonction|Your role'},
+    {id:'resp_email', t:'text', req:1, q:'Votre adresse électronique|Your email address'}
+  ]
+});
+
+SECTIONS.push({ id:'profil', kind:'profile',
+  nav:'Profil d’organisation|Organisation profile',
+  title:'Profil d’organisation|Organisation profile',
+  intro:'Construit à partir de vos réponses, prêt à être adressé à un bailleur.|Built from your answers, ready to send to a funder.'
+});
+
+/* ================= state ================= */
+var KEY='fk-funding-profile-v3';
+var STATE={v:3, lang:'fr', a:{}, t:null};
+var saveTimer=null, current=0;
+
+function load(){ try{ var r=localStorage.getItem(KEY); if(r){ var p=JSON.parse(r); if(p&&p.a){ STATE=p; LANG=p.lang||'fr'; } } }catch(e){} }
+function persist(){ STATE.lang=LANG; STATE.t=new Date().toISOString(); try{ localStorage.setItem(KEY, JSON.stringify(STATE)); }catch(e){} }
+function flagSaved(){
+  var f=document.getElementById('saveflag'); f.classList.remove('saving');
+  var d=STATE.t?new Date(STATE.t):null;
+  document.getElementById('savetxt').textContent = d
+    ? T('saved',{t:d.toLocaleTimeString(LANG==='fr'?'fr-FR':'en-GB',{hour:'2-digit',minute:'2-digit'})})
+    : T('never');
+}
+function touch(){
+  var f=document.getElementById('saveflag'); f.classList.add('saving');
+  document.getElementById('savetxt').textContent=T('saving');
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(function(){ persist(); flagSaved(); refreshProgress(); }, 450);
+}
+function setA(id,v){ if(v===''||v==null||(Array.isArray(v)&&!v.length)) delete STATE.a[id]; else STATE.a[id]=v; touch(); }
+function getA(id){ return STATE.a[id]; }
+function has(id){ var v=STATE.a[id]; if(v==null) return false; if(Array.isArray(v)) return v.length>0; if(typeof v==='string') return v.trim()!==''; return true; }
+function isGroup(v){ return Array.isArray(v) && v.length && typeof v[0]==='object' && !Array.isArray(v[0]); }
+function fmtVal(v){
+  if(v==null) return '';
+  if(isGroup(v)) return v.map(function(o){ return Object.keys(o).map(function(k){ return o[k]; }).filter(function(x){ return String(x||'').trim()!==''; }).join(' — '); }).join('\n');
+  if(Array.isArray(v)) return v.join(' · ');
+  return String(v);
+}
+/* Options are stored as their bilingual "fr|en" key; dl() renders the
+   half for the current language. Older saves hold plain text — passed
+   through unchanged. */
+function dl(x){ return (typeof x==='string' && x.indexOf('|')>=0) ? L(x) : x; }
+function isOther(x){ return x==='Autre'||x==='Other'||x==='Autre|Other'; }
+/* Replaces the "Autre" token with the text the respondent typed. */
+function resolved(id){
+  var v=getA(id);
+  if(!Array.isArray(v)) return dl(v);
+  var arr=v.map(dl), ot=STATE.a[id+'__other'];
+  if(ot!=null&&String(ot).trim()!=='')
+    arr=arr.map(function(x){ return isOther(x)?String(ot).trim():x; });
+  return arr;
+}
+function raw(id){ return fmtVal(resolved(id)); }
+function num(id){ var v=getA(id); if(v==null||v==='') return null; var n=Number(v); return isNaN(n)?null:n; }
+function fmt(n){ return n==null?null:n.toLocaleString(LANG==='fr'?'fr-FR':'en-GB'); }
+
+function formSections(){ return SECTIONS.filter(function(s){ return s.qs && s.qs.length; }); }
+function secStats(s){ var n=s.qs?s.qs.length:0, d=0; if(s.qs) s.qs.forEach(function(q){ if(has(q.id)) d++; }); return {n:n,d:d}; }
+function overall(){ var n=0,d=0; formSections().forEach(function(s){ var t=secStats(s); n+=t.n; d+=t.d; }); return {n:n,d:d,p:n?Math.round(d/n*100):0}; }
+
+/* ================= rendering ================= */
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function el(t,c,h){ var e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e; }
+
+function renderNav(){
+  var box=document.getElementById('navlist'); box.innerHTML='';
+  SECTIONS.forEach(function(s,i){
+    var b=el('button','navitem'); b.type='button';
+    b.setAttribute('aria-current', i===current?'true':'false');
+    var st=s.qs?secStats(s):null, ring='';
+    if(st&&st.n){
+      var C=2*Math.PI*7, on=C*(st.d/st.n);
+      ring='<svg class="navring" viewBox="0 0 17 17"><circle class="trk" cx="8.5" cy="8.5" r="7"></circle>'+
+           '<circle class="val" cx="8.5" cy="8.5" r="7" stroke-dasharray="'+on.toFixed(2)+' '+C.toFixed(2)+'"></circle></svg>';
+    }
+    b.innerHTML='<span class="navnum">'+(s.qs?String(i):'·')+'</span><span>'+esc(L(s.nav))+'</span>'+ring;
+    b.onclick=function(){ go(i); };
+    box.appendChild(b);
+  });
+}
+function refreshProgress(){
+  var o=overall();
+  document.getElementById('pctnum').textContent=o.p+'%';
+  document.getElementById('pctsub').textContent=o.d+' '+T('answered',{n:o.n});
+  document.getElementById('pctbar').style.width=o.p+'%';
+  renderNav();
+}
+function markDone(id){ var c=document.getElementById('q_'+id); if(c) c.classList.toggle('done', has(id)); }
+
+function fieldFor(q){
+  var w=el('div','qbody'), v=getA(q.id);
+  if(q.t==='text'){
+    var i=el('input'); i.type='text'; i.value=v==null?'':v;
+    i.oninput=function(){ setA(q.id,i.value); markDone(q.id); }; w.appendChild(i);
+  } else if(q.t==='money'){
+    var m=el('div','money'); m.appendChild(el('span',null,'USD'));
+    var mi=el('input'); mi.type='number'; mi.placeholder='0'; mi.value=v==null?'':v;
+    mi.oninput=function(){ setA(q.id,mi.value); markDone(q.id); }; m.appendChild(mi); w.appendChild(m);
+  } else if(q.t==='long'){
+    var t=el('textarea'); t.value=v==null?'':v;
+    t.oninput=function(){ setA(q.id,t.value); markDone(q.id); }; w.appendChild(t);
+  } else if(q.t==='one'){
+    var b1=el('div','opts'+(q.o.length>4?' grid':''));
+    q.o.forEach(function(o){
+      var val=L(o), sel=(v===o||v===val);
+      var lab=el('label','opt'+(sel?' sel':''));
+      var r=el('input'); r.type='radio'; r.name=q.id; r.checked=sel;
+      /* store the bilingual key, not the displayed text, so answers
+         survive a language switch */
+      r.onchange=function(){ setA(q.id,o); [].forEach.call(b1.children,function(c){c.classList.remove('sel')}); lab.classList.add('sel'); markDone(q.id); };
+      lab.appendChild(r); lab.appendChild(el('span',null,esc(val))); b1.appendChild(lab);
+    });
+    w.appendChild(b1);
+  } else if(q.t==='many'){
+    var cur=Array.isArray(v)?v.slice():[];
+    var idxOf=function(arr,o){ var i=arr.indexOf(o); return i>=0?i:arr.indexOf(L(o)); };
+    var b2=el('div','opts'+(q.o.length>4?' grid':''));
+    var otherBox=null;
+    q.o.forEach(function(o){
+      var val=L(o), sel=idxOf(cur,o)>=0;
+      var lab=el('label','opt'+(sel?' sel':''));
+      var c=el('input'); c.type='checkbox'; c.checked=sel;
+      c.onchange=function(){
+        var arr=Array.isArray(getA(q.id))?getA(q.id).slice():[], at=idxOf(arr,o);
+        if(c.checked){ if(at<0) arr.push(o); lab.classList.add('sel'); }
+        else { if(at>=0) arr.splice(at,1); lab.classList.remove('sel'); }
+        setA(q.id,arr); markDone(q.id);
+        if(otherBox) syncOther();
+      };
+      lab.appendChild(c); lab.appendChild(el('span',null,esc(val))); b2.appendChild(lab);
+    });
+    w.appendChild(b2);
+    if(q.other){
+      otherBox=el('div','otherbox');
+      var oi=el('input'); oi.type='text';
+      oi.placeholder = LANG==='fr' ? 'Précisez…' : 'Please specify…';
+      oi.setAttribute('aria-label', LANG==='fr'?'Autre — précisez':'Other — please specify');
+      oi.value = STATE.a[q.id+'__other'] || '';
+      oi.oninput=function(){
+        if(oi.value.trim()==='') delete STATE.a[q.id+'__other'];
+        else STATE.a[q.id+'__other']=oi.value;
+        touch();
+      };
+      otherBox.appendChild(oi);
+      w.appendChild(otherBox);
+      var syncOther=function(){
+        var arr=getA(q.id)||[];
+        var on = arr.some(isOther);
+        otherBox.style.display = on ? 'block' : 'none';
+      };
+      syncOther();
+    }
+  } else if(q.t==='group'){
+    var blank=function(){ var o={}; q.fields.forEach(function(f){ o[f.k]=''; }); return o; };
+    var items=isGroup(v)?v.map(function(o){ var c={}; q.fields.forEach(function(f){ c[f.k]=o[f.k]||''; }); return c; }):[blank()];
+    var box=el('div','grp'), body=el('div','grp');
+    function commit(){
+      var keep=items.filter(function(o){ return q.fields.some(function(f){ return String(o[f.k]||'').trim()!==''; }); });
+      setA(q.id, keep.length?keep:null); markDone(q.id);
+    }
+    function draw(){
+      body.innerHTML='';
+      items.forEach(function(item,ix){
+        var card=el('div','grp-card');
+        var head=el('div','grp-head');
+        head.appendChild(el('b',null, esc(L(q.itemLabel))+' '+(ix+1)));
+        var del=el('button','grp-del','&times;'); del.type='button';
+        del.setAttribute('aria-label', LANG==='fr'?'Supprimer':'Remove');
+        del.onclick=function(){ items.splice(ix,1); if(!items.length) items.push(blank()); draw(); commit(); };
+        head.appendChild(del); card.appendChild(head);
+        var fw=el('div','grp-fields');
+        q.fields.forEach(function(f){
+          var cell=el('div','grp-f'+(f.wide?' wide':''));
+          var id='g_'+q.id+'_'+ix+'_'+f.k;
+          var lb=el('label',null,esc(L(f.l))); lb.setAttribute('for',id); cell.appendChild(lb);
+          var inp = f.long ? el('textarea') : el('input');
+          if(!f.long) inp.type = f.num?'number':'text';
+          inp.id=id; inp.value=item[f.k]||''; if(f.ph) inp.placeholder=f.ph;
+          inp.oninput=function(){ items[ix][f.k]=inp.value; commit(); };
+          cell.appendChild(inp); fw.appendChild(cell);
+        });
+        card.appendChild(fw); body.appendChild(card);
+      });
+    }
+    draw();
+    box.appendChild(body);
+    var add=el('button','grp-add'); add.type='button'; add.textContent=L(q.addLabel);
+    add.onclick=function(){ items.push(blank()); draw(); };
+    box.appendChild(add);
+    w.appendChild(box);
+  }
+  return w;
+}
+
+function renderSection(i){
+  var s=SECTIONS[i], m=document.getElementById('main');
+  m.innerHTML='';
+  if(s.kind==='brief'){ renderBrief(m); }
+  else if(s.kind==='profile'){ renderProfile(m,s); }
+  else {
+    var eb=el('div','eyebrow');
+    eb.innerHTML='<span class="rule"></span><span>'+esc(LANG==='fr'?('Section '+i+' sur 7'):('Section '+i+' of 7'))+'</span>';
+    m.appendChild(eb);
+    m.appendChild(el('h2','sec-title',esc(L(s.title))));
+    if(s.intro) m.appendChild(el('p','sec-intro',esc(L(s.intro))));
+    var list=el('div','qlist');
+    s.qs.forEach(function(q){
+      var card=el('div','q'+(has(q.id)?' done':'')); card.id='q_'+q.id;
+      var lab=el('div','qlab');
+      lab.appendChild(el('span','qnum',String(qNumber(q.id))));
+      lab.appendChild(el('span','qtext', esc(L(q.q))+(q.req?' <span class="req">*</span>':'')));
+      card.appendChild(lab);
+      if(q.h) card.appendChild(el('div','qhint',esc(L(q.h))));
+      card.appendChild(fieldFor(q));
+      list.appendChild(card);
+    });
+    m.appendChild(list);
+  }
+  var pg=el('div','pager');
+  var back=el('button','btn'); back.type='button'; back.textContent=T('prev');
+  back.disabled=(i===0); back.onclick=function(){ go(i-1); };
+  var fwd=el('button','btn primary'); fwd.type='button'; fwd.textContent=T('next');
+  fwd.disabled=(i===SECTIONS.length-1); fwd.onclick=function(){ go(i+1); };
+  pg.appendChild(back); pg.appendChild(fwd); m.appendChild(pg);
+  window.scrollTo({top:0,behavior:'auto'});
+}
+var QNUM={}, QTOTAL=0;
+(function(){ var n=0; SECTIONS.forEach(function(s){ if(s.kind==='finish'||!s.qs) return; s.qs.forEach(function(q){ if(q.nonum) return; QNUM[q.id]=++n; }); }); QTOTAL=n; })();
+function qNumber(id){ return QNUM[id]||'·'; }
+function go(i){
+  if(i<0||i>=SECTIONS.length) return;
+  current=i; renderNav(); renderSection(i);
+  if(window.innerWidth<=900) document.getElementById('rail').classList.add('collapsed');
+}
+
+function renderBrief(m){
+  var isFr=LANG==='fr';
+  var eb=el('div','eyebrow'); eb.innerHTML='<span class="rule"></span><span>Fondation Kibira</span>';
+  m.appendChild(eb);
+  m.appendChild(el('h2','sec-title', isFr?'Profil de financement':'Funding profile'));
+  m.appendChild(el('p','open-lede', isFr
+    ? 'Ce questionnaire recueille les informations essentielles pour comprendre le profil de la Fondation Kibira et identifier les opportunités de financement qui correspondent réellement à ses domaines d’intervention, son expérience, sa capacité et ses ambitions.'
+    : 'This questionnaire gathers the essential information needed to understand Fondation Kibira’s profile and to identify funding opportunities that genuinely match its fields of work, its experience, its capacity and its ambitions.'));
+  var meta=el('div','open-meta');
+  var ic=function(d){ return '<svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>'; };
+  [[ic('<path d="M5 3h7l3 3v11H5z"/><path d="M8 9h4M8 12h4"/>'), '7 sections · '+QTOTAL+(isFr?' questions':' questions')],
+   [ic('<path d="M10 3v9M6.5 8.5L10 12l3.5-3.5"/><path d="M4 15h12"/>'), isFr?'S’enregistre tout seul — fermez et revenez quand vous voulez':'Saves itself — close it and come back whenever']
+  ].forEach(function(x){ meta.appendChild(el('div',null,x[0]+'<span>'+esc(x[1])+'</span>')); });
+  m.appendChild(meta);
+  var cta=el('button','btn primary big'); cta.type='button';
+  cta.style.marginTop='32px'; cta.textContent=isFr?'Commencer':'Begin';
+  cta.onclick=function(){ go(1); };
+  m.appendChild(cta);
+}
+
+/* ================= organisation profile ================= */
+var ORG='Fondation Kibira';
+
+/* Narrative builder: stitches answers into prose, silently skipping
+   any sentence whose inputs are missing. Returns plain text. */
+function lower1(s){ return s?s.charAt(0).toLowerCase()+s.slice(1):s; }
+/* lc:true lowercases each item — correct for common nouns used mid-sentence
+   in French. Leave it off for place names and other proper nouns. */
+function list(id,opt){
+  if(!has(id)) return null;
+  opt=opt||{};
+  var v=resolved(id); if(!Array.isArray(v)) return String(v);
+  var a=v.slice().map(function(x){ return opt.lc?lower1(String(x)):String(x); });
+  if(a.length===1) return a[0];
+  return a.slice(0,-1).join(', ')+' '+(LANG==='fr'?'et':'and')+' '+a[a.length-1];
+}
+function money(id){ var n=num(id); return n==null?null:fmt(n)+' USD'; }
+function para(parts){ return parts.filter(function(x){return x;}).join(' '); }
+
+function narrIdentity(){
+  var fr=LANG==='fr', s=[];
+  if(has('legal_status')||has('reg_year')){
+    if(fr) s.push(ORG+' est '+(has('legal_status')?lower1(raw('legal_status')):'une organisation burundaise')+
+      (has('reg_year')?', enregistrée en '+raw('reg_year'):'')+'.');
+    else s.push(ORG+' is '+(has('legal_status')?lower1(raw('legal_status')):'a Burundian organisation')+
+      (has('reg_year')?', registered in '+raw('reg_year'):'')+'.');
+  }
+  if(has('countries')) s.push(fr?('Elle est légalement enregistrée ou autorisée à intervenir dans les pays suivants : '+raw('countries')+'.')
+                               :('It is legally registered or authorised to operate in: '+raw('countries')+'.'));
+  if(has('foreign_funds')){
+    var f=raw('foreign_funds');
+    if(/^Oui|^Yes/.test(f)) s.push(fr?('Elle est autorisée à recevoir directement des financements provenant de l’étranger'+(/condition/i.test(f)?', sous certaines conditions':'')+'.')
+                                     :('It is authorised to receive funding directly from abroad'+(/condition/i.test(f)?', under certain conditions':'')+'.'));
+    else if(/^Non|^No/.test(f)) s.push(fr?'Les financements étrangers doivent transiter par une organisation partenaire.'
+                                          :'Foreign funding must be routed through a partner organisation.');
+  }
+  return para(s);
+}
+function narrWork(){
+  var fr=LANG==='fr', s=[];
+  var d=list('domains',{lc:1}), extra=has('domains_other')?raw('domains_other'):null;
+  if(d) s.push(fr?('La Fondation intervient dans les domaines suivants : '+d+(extra?', ainsi que '+lower1(extra):'')+'.')
+                 :('The Foundation works across '+d+(extra?', as well as '+lower1(extra):'')+'.'));
+  var b=list('beneficiaries',{lc:1});
+  if(b) s.push(fr?('Elle travaille principalement avec les '+b+'.'):('It works principally with '+b+'.'));
+  var z=list('zones');
+  if(z) s.push(fr?('Ses zones d’intervention couvrent '+z+'.'):('Its areas of operation cover '+z+'.'));
+  if(has('scope')){
+    var sc=raw('scope');
+    if(/uniquement|only/i.test(sc)) s.push(fr?'Son action se concentre exclusivement sur le Burundi.':'Its work is focused exclusively on Burundi.');
+    else if(/régional|regional/i.test(sc)) s.push(fr?'Elle est ouverte à des projets régionaux.':'It is open to regional projects.');
+    else if(/international/i.test(sc)) s.push(fr?'Elle est ouverte à des projets internationaux.':'It is open to international projects.');
+  }
+  return para(s);
+}
+function narrTrack(){
+  var fr=LANG==='fr', s=[];
+  var n=has('projects_done')?getA('projects_done').length:0;
+  if(n){
+    var funders=[];
+    getA('projects_done').forEach(function(o){ var x=String(o.bailleur||'').trim(); if(x&&funders.indexOf(x)<0) funders.push(x); });
+    s.push(fr?('La Fondation a mis en œuvre '+n+' projet'+(n>1?'s':'')+' au cours des dernières années.')
+              :('The Foundation has delivered '+n+' project'+(n>1?'s':'')+' in recent years.'));
+    var fj = funders.length>1
+      ? funders.slice(0,-1).join(', ')+' '+(fr?'et':'and')+' '+funders[funders.length-1]
+      : funders[0];
+    if(funders.length) s.push(fr?('Ces projets ont été financés par '+fj+'.')
+                                :('These projects were funded by '+fj+'.'));
+  }
+  var lp=money('largest_project');
+  if(lp) s.push(fr?('Le plus important projet géré à ce jour représente '+lp+'.')
+                  :('The largest project managed to date is valued at '+lp+'.'));
+  if(has('intl_funds')) s.push(raw('intl_funds'));
+  return para(s);
+}
+function narrCapacity(){
+  var fr=LANG==='fr', s=[];
+  if(has('annual_budget')) s.push(fr?('Budget annuel des trois derniers exercices : '+raw('annual_budget').replace(/\n/g,' ; ')+'.')
+                                    :('Annual budget over the last three years: '+raw('annual_budget').replace(/\n/g,'; ')+'.'));
+  var le=money('largest_external');
+  if(le) s.push(fr?('Le plus important financement externe reçu s’élève à '+le+'.'):('The largest external grant received is '+le+'.'));
+  if(has('manageable_size')) s.push(fr?('La Fondation estime pouvoir conduire aujourd’hui des projets de l’ordre de '+lower1(raw('manageable_size'))+'.')
+                                      :('The Foundation considers it can currently deliver projects in the range of '+lower1(raw('manageable_size'))+'.'));
+  var cfRaw=has('cofinance')?getA('cofinance'):null;
+  var noCf=cfRaw && cfRaw.length===1 && /^(Non|No,)/.test(dl(cfRaw[0]));
+  var cf=list('cofinance',{lc:1});
+  if(cf && !noCf) s.push(fr?('Un cofinancement peut être apporté sous les formes suivantes : '+cf+'.')
+                           :('Co-financing can be provided in the form of '+cf+'.'));
+  else if(cf) s.push(fr?'La Fondation n’est pas en mesure d’apporter un cofinancement.':'The Foundation is not able to provide co-financing.');
+  return para(s);
+}
+function narrPartnership(){
+  var fr=LANG==='fr', s=[];
+  if(has('consortium')){
+    var c=raw('consortium');
+    if(/^Oui|^Yes/.test(c)) s.push(fr?'La Fondation est ouverte à répondre à des appels à projets en consortium.'
+                                     :'The Foundation is open to applying in consortium.');
+    else s.push(fr?'La Fondation candidate seule.':'The Foundation applies on its own.');
+  }
+  if(has('junior')){
+    var j=raw('junior');
+    if(/^Oui|^Yes/.test(j)) s.push(fr?'Elle accepte également d’intervenir comme partenaire junior ou sous-bénéficiaire.'
+                                     :'It will also act as a junior partner or sub-grantee.');
+    else if(/chef de file|lead/i.test(j)) s.push(fr?'Elle intervient en chef de file uniquement.':'It applies as lead applicant only.');
+  }
+  var st=list('consortium_strengths',{lc:1});
+  if(st) s.push(fr?('Elle apporte à un partenariat : '+st+'.'):('It brings to a partnership: '+st+'.'));
+  if(has('partners_now')) s.push(raw('partners_now'));
+  return para(s);
+}
+function narrSeeking(){
+  var fr=LANG==='fr', s=[];
+  if(has('future_projects')) s.push(raw('future_projects'));
+  var t=money('total_target');
+  if(t) s.push(fr?('Sur les 12 à 24 prochains mois, la Fondation cherche à mobiliser '+t+'.')
+                 :('Over the next 12 to 24 months, the Foundation is seeking to raise '+t+'.'));
+  var ft=list('funding_types',{lc:1});
+  if(ft) s.push(fr?('Les financements recherchés portent sur '+ft+'.'):('The funding sought covers '+ft+'.'));
+  if(has('designed_projects')) s.push(raw('designed_projects'));
+  return para(s);
+}
+function narrPositioning(){
+  return para([ has('why_us')?raw('why_us'):null, has('differentiators')?raw('differentiators'):null, has('anything_else')?raw('anything_else'):null ]);
+}
+
+function A(id,fFr,fEn){
+  var v=resolved(id);
+  if(v==null||v===''||(Array.isArray(v)&&!v.length))
+    return '<span class="miss">'+(LANG==='fr'?(fFr||'à compléter'):(fEn||'to be completed'))+'</span>';
+  return esc(fmtVal(v));
+}
+function chips(id){
+  if(!has(id)) return '<p>'+A(id)+'</p>';
+  return '<div class="chips">'+resolved(id).map(function(x){ return '<span>'+esc(x)+'</span>'; }).join('')+'</div>';
+}
+function cards(id,titleKey,order){
+  if(!has(id)) return '<p>'+A(id)+'</p>';
+  return getA(id).map(function(o){
+    var head=esc(o[titleKey]||'—'), rest='';
+    order.forEach(function(p){
+      if(p.k===titleKey) return;
+      var val=String(o[p.k]||'').trim(); if(!val) return;
+      rest+='<span><b style="font-weight:600;color:var(--ink-3);font-family:inherit;font-size:12.6px;display:inline">'+esc(L(p.l))+' : </b>'+esc(val)+(p.usd?' USD':'')+'</span>';
+    });
+    return '<div class="pcard"><b>'+head+'</b>'+rest+'</div>';
+  }).join('');
+}
+function renderProfile(m,s){
+  var isFr=LANG==='fr';
+  var eb=el('div','eyebrow'); eb.innerHTML='<span class="rule"></span><span>'+esc(L(s.nav))+'</span>';
+  m.appendChild(eb);
+  m.appendChild(el('h2','sec-title',esc(L(s.title))));
+  m.appendChild(el('p','sec-intro',esc(L(s.intro))));
+
+  var o=overall(), nt=el('div','note');
+  nt.innerHTML = o.p>=70
+    ? '<b>'+(isFr?'Prêt.':'Ready.')+'</b> '+(isFr?'Questionnaire rempli à '+o.p+' %.':'Questionnaire '+o.p+'% complete.')
+    : '<b>'+(isFr?'Encore incomplet.':'Still incomplete.')+'</b> '+(isFr
+        ? 'Rempli à '+o.p+' %. Les mentions en rouge signalent ce qui manque.'
+        : o.p+'% complete. The items in red show what is missing.');
+  nt.style.marginTop='20px'; m.appendChild(nt);
+
+  var bar=el('div','profbar');
+  [['pdf', isFr?'Télécharger en PDF':'Download as PDF'],
+   ['print', isFr?'Imprimer':'Print'],
+   ['md', isFr?'Version texte':'Text version']].forEach(function(b){
+    var btn=el('button','btn'+(b[0]==='pdf'?' primary':'')); btn.type='button'; btn.textContent=b[1];
+    btn.onclick=function(){ b[0]==='pdf'?exportProfilePDF():(b[0]==='print'?window.print():exportProfileMD()); };
+    bar.appendChild(btn);
+  });
+  m.appendChild(bar);
+
+  var doneF=SECTIONS.filter(function(x){return x.id==='experience';})[0].qs[0].fields;
+  var futF=SECTIONS.filter(function(x){return x.id==='financer';})[0].qs[1].fields;
+
+  var p=el('div','prof'), H='';
+  H+='<div class="ph-sub">'+(isFr?'Profil d’organisation':'Organisation profile')+'</div>';
+  H+='<h1>'+ORG+'</h1>';
+
+  var contact=[];
+  if(has('org_website')) contact.push(esc(raw('org_website')));
+  if(has('org_email')) contact.push(esc(raw('org_email')));
+  if(has('org_phone')) contact.push(esc(raw('org_phone')));
+  if(has('org_address')) contact.push(esc(raw('org_address')));
+  if(has('org_social')) getA('org_social').forEach(function(o){
+    var t=[o.plateforme,o.lien].filter(function(x){return String(x||'').trim()!=='';}).join(' ');
+    if(t) contact.push(esc(t));
+  });
+  H+= contact.length
+    ? '<div class="contactline">'+contact.join('<span class="sep">·</span>')+'</div>'
+    : '<div class="contactline"><span class="miss">'+(isFr?'Coordonnées à compléter — section « Coordonnées »':'Contact details to be completed — “Contact details” section')+'</span></div>';
+
+  function block(title, text, fallbackFr, fallbackEn){
+    return '<h4>'+title+'</h4><p>'+(text?esc(text):'<span class="miss">'+(isFr?fallbackFr:fallbackEn)+'</span>')+'</p>';
+  }
+
+  H+='<h4>'+(isFr?'Qui nous sommes':'Who we are')+'</h4>';
+  H+='<p class="lead">'+A('mission', 'Mission à compléter.', 'Mission to be completed.')+'</p>';
+  var idn=narrIdentity();
+  if(idn) H+='<p>'+esc(idn)+'</p>';
+
+  H+=block(isFr?'Notre travail':'Our work', narrWork(),
+    'Domaines, bénéficiaires et zones d’intervention à compléter.','Fields, beneficiaries and areas of operation to be completed.');
+  if(has('priorities')) H+='<p>'+(isFr?'<b>Priorités pour les deux à trois prochaines années.</b> ':'<b>Priorities for the next two to three years.</b> ')+A('priorities')+'</p>';
+  if(has('domains')) H+=chips('domains');
+
+  H+=block(isFr?'Notre expérience':'Our track record', narrTrack(),
+    'Projets réalisés à compléter.','Projects delivered to be completed.');
+  if(has('projects_done')) H+=cards('projects_done','nom',doneF);
+  if(has('achievements')) H+='<p>'+(isFr?'<b>Résultats que nous mettons en avant.</b> ':'<b>The results we put forward.</b> ')+A('achievements')+'</p>';
+  if(has('partners_past')) H+='<p>'+(isFr?'<b>Partenaires et bailleurs.</b> ':'<b>Partners and funders.</b> ')+A('partners_past')+'</p>';
+
+  H+=block(isFr?'Notre capacité':'Our capacity', narrCapacity(),
+    'Capacité financière à compléter.','Financial capacity to be completed.');
+  if(has('prefinance')) H+='<p>'+(isFr?'<b>Préfinancement.</b> ':'<b>Pre-financing.</b> ')+A('prefinance')+'</p>';
+  if(has('audit')) H+='<p>'+(isFr?'<b>Audit externe.</b> ':'<b>External audit.</b> ')+A('audit')+'</p>';
+
+  H+=block(isFr?'Travailler avec nous':'Working with us', narrPartnership(),
+    'Disponibilité en consortium à compléter.','Consortium arrangements to be completed.');
+
+  H+=block(isFr?'Ce que nous cherchons à financer':'What we are seeking to fund', narrSeeking(),
+    'Projets à financer à compléter.','Projects seeking funding to be completed.');
+  if(has('project_details')) H+=cards('project_details','titre',futF);
+
+  H+=block(isFr?'Pourquoi la Fondation Kibira':'Why Fondation Kibira', narrPositioning(),
+    'Positionnement à compléter.','Positioning to be completed.');
+  if(has('no_go')) H+='<p>'+(isFr?'<b>Hors périmètre.</b> ':'<b>Out of scope.</b> ')+A('no_go')+'</p>';
+
+  H+='<h4>'+(isFr?'Nous contacter':'Contact us')+'</h4><dl class="dl">';
+  H+='<dt>'+(isFr?'Personne de contact':'Contact person')+'</dt><dd>'+A('resp_name')+'</dd>';
+  H+='<dt>'+(isFr?'Fonction':'Role')+'</dt><dd>'+A('resp_role')+'</dd>';
+  H+='<dt>'+(isFr?'Courriel':'Email')+'</dt><dd>'+A('resp_email')+'</dd>';
+  if(has('org_email')) H+='<dt>'+(isFr?'Courriel général':'General email')+'</dt><dd>'+A('org_email')+'</dd>';
+  if(has('org_phone')) H+='<dt>'+(isFr?'Téléphone':'Telephone')+'</dt><dd>'+A('org_phone')+'</dd>';
+  if(has('org_website')) H+='<dt>'+(isFr?'Site web':'Website')+'</dt><dd>'+A('org_website')+'</dd>';
+  if(has('org_address')) H+='<dt>'+(isFr?'Siège':'Address')+'</dt><dd>'+A('org_address')+'</dd>';
+  if(has('org_social')) H+='<dt>'+(isFr?'Réseaux sociaux':'Social media')+'</dt><dd>'+A('org_social')+'</dd>';
+  H+='</dl>';
+
+  p.innerHTML=H; m.appendChild(p);
+}
+
+/* ================= file delivery ================= */
+var DL=null, DL_DONE=false;
+function getDL(){
+  if(DL_DONE) return Promise.resolve(DL);
+  DL_DONE=true;
+  try{
+    if(window.claude && typeof window.claude.use==='function')
+      return window.claude.use('downloads').then(function(d){ DL=d; return d; }).catch(function(){ return null; });
+  }catch(e){}
+  return Promise.resolve(null);
+}
+function blobSave(fn,data,mime){
+  try{
+    var url=URL.createObjectURL(new Blob([data],{type:mime}));
+    var a=document.createElement('a'); a.href=url; a.download=fn;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },1500);
+    return true;
+  }catch(e){ return false; }
+}
+function deliver(fn,data,mime,altFn,altData){
+  return getDL().then(function(dl){
+    if(!dl) return blobSave(fn,data,mime)?'saved':'failed';
+    return dl.save({filename:fn,data:data}).then(function(){return 'saved';}).catch(function(err){
+      var c=err&&err.code;
+      if(c==='declined') return 'declined';
+      if(c==='rate_limited') return 'busy';
+      if((c==='extension_not_enabled'||c==='rejected_extension')&&altFn)
+        return dl.save({filename:altFn,data:altData}).then(function(){return 'alt';}).catch(function(){return 'failed';});
+      return blobSave(fn,data,mime)?'saved':'failed';
+    });
+  });
+}
+function toast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._h); t._h=setTimeout(function(){ t.classList.remove('show'); },4200);
+}
+function stamp(){ var d=new Date(); return ''+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0'); }
+function report(r,ok){
+  var isFr=LANG==='fr';
+  if(r==='saved') toast(ok);
+  else if(r==='alt') toast(isFr?'PDF indisponible ici — version texte téléchargée.':'PDF unavailable here — text version downloaded.');
+  else if(r==='declined') toast(isFr?'Téléchargement annulé.':'Download cancelled.');
+  else if(r==='busy') toast(isFr?'Un téléchargement est déjà en cours.':'A download is already in progress.');
+  else toast(isFr?'Le téléchargement n’a pas abouti.':'The download did not complete.');
+}
+function exportSave(){
+  var payload={__fk:'funding-profile',v:3,lang:LANG,savedAt:new Date().toISOString(),a:STATE.a};
+  deliver('fondation-kibira-questionnaire-'+stamp()+'.json', JSON.stringify(payload,null,2),'application/json')
+    .then(function(r){ report(r, LANG==='fr'?'Fichier enregistré. Rouvrez-le ici pour reprendre.':'File saved. Reopen it here to continue.'); });
+}
+function handleUpload(file){
+  if(!file) return;
+  if(!/\.json$/i.test(file.name||'')){
+    toast(LANG==='fr'
+      ? 'Un PDF rempli ne peut pas être relu par cette page. Envoyez-le par courriel, ou remplissez le formulaire ici.'
+      : 'A filled-in PDF cannot be read back by this page. Send it by email, or fill the form here instead.');
+    return;
+  }
+  var rd=new FileReader();
+  rd.onload=function(){
+    try{
+      var p=JSON.parse(rd.result);
+      if(!p||p.__fk!=='funding-profile'||!p.a) throw 0;
+      var n=Object.keys(p.a).length;
+      STATE.a=p.a; if(p.lang) setLang(p.lang,true);
+      persist(); flagSaved(); refreshProgress(); renderSection(current);
+      toast((LANG==='fr'?'Reprise — ':'Resumed — ')+n+(LANG==='fr'?' réponses restaurées.':' answers restored.'));
+    }catch(e){
+      toast(LANG==='fr'?'Ce fichier n’est pas une sauvegarde du questionnaire.':'That file is not a questionnaire save file.');
+    }
+  };
+  rd.readAsText(file);
+}
+
+/* ---- PDF ---- */
+function pdfEsc(s){ return s.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)'); }
+var WA={'‘':0x91,'’':0x92,'“':0x93,'”':0x94,'–':0x96,'—':0x97,'•':0x95,'…':0x85,'€':0x80,'Œ':0x8C,'œ':0x9C,' ':0x20};
+function winAnsi(s){
+  var o='';
+  for(var i=0;i<s.length;i++){
+    var ch=s[i], c=s.charCodeAt(i);
+    if(WA[ch]!=null) o+=String.fromCharCode(WA[ch]);
+    else if(c<=0xFF) o+=ch; else o+='?';
+  }
+  return o;
+}
+function makePDF(title, blocks){
+  var PW=595.28, PH=841.89, ML=54, MR=54, MT=70, MB=56, maxW=PW-ML-MR;
+  var GREEN=[0.180,0.420,0.290], BROWN=[0.106,0.227,0.173], INK=[0.110,0.137,0.125], GREY=[0.40,0.44,0.42], GOLD=[0.180,0.420,0.290], RULE=[0.85,0.88,0.86];
+  var pages=[], cur=[], y=PH-MT;
+  function wOf(t,s,b){ return t.length*s*(b?0.545:0.505); }
+  function wrap(t,s,b,W){
+    var out=[];
+    String(t).split('\n').forEach(function(para){
+      var ws=para.replace(/\s+/g,' ').trim().split(' '), line='';
+      if(!ws.length||ws[0]===''){ out.push(''); return; }
+      for(var i=0;i<ws.length;i++){
+        var c=line?line+' '+ws[i]:ws[i];
+        if(wOf(c,s,b)>W&&line){ out.push(line); line=ws[i]; } else line=c;
+      }
+      if(line) out.push(line);
+    });
+    return out.length?out:[''];
+  }
+  function page(){ pages.push(cur); cur=[]; y=PH-MT; }
+  function need(h){ if(y-h<MB) page(); }
+  function txt(t,o){
+    o=o||{};
+    var s=o.size||9.6, b=!!o.bold, col=o.col||INK, ind=o.ind||0, lh=o.lh||s*1.42;
+    wrap(t,s,b,maxW-ind).forEach(function(ln){ need(lh); cur.push({k:'t',s:ln,size:s,bold:b,x:ML+ind,y:y,c:col}); y-=lh; });
+  }
+  function gap(h){ need(h); y-=h; }
+  function rule(c,w){ need(10); cur.push({k:'r',y:y+4,x1:ML,x2:PW-MR,c:c||RULE,w:w||0.7}); y-=10; }
+  function lines(n){ for(var i=0;i<(n||2);i++){ need(15); cur.push({k:'r',y:y,x1:ML+14,x2:PW-MR,c:RULE,w:0.6}); y-=15; } y-=3; }
+
+  txt(title,{size:19,bold:true,col:BROWN,lh:24}); gap(3); rule(GREEN,1.4); gap(6);
+  blocks.forEach(function(b){
+    if(b.k==='h'){ gap(11); txt(b.t,{size:12,bold:true,col:GREEN,lh:16.5}); rule(); }
+    else if(b.k==='sub'){ txt(b.t,{size:9,col:GREY,lh:12.5}); gap(4); }
+    else if(b.k==='q'){ gap(6); txt(b.n?b.n+'.  '+b.t:b.t,{size:9.8,bold:true,lh:13.5}); }
+    else if(b.k==='hint'){ txt(b.t,{size:8.4,col:GOLD,ind:14,lh:11.5}); }
+    else if(b.k==='opt'){ txt('[  ]  '+b.t,{size:9,ind:14,lh:12.5}); }
+    else if(b.k==='ans'){ txt(b.t,{size:9.4,ind:14,lh:13}); gap(2); }
+    else if(b.k==='blank'){ lines(b.n||2); }
+    else if(b.k==='gap'){ gap(b.n||8); }
+  });
+  page();
+
+  var objs=[];
+  objs.push('<< /Type /Catalog /Pages 2 0 R >>');
+  objs.push('');
+  objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
+  objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
+  var kids=[], first=5;
+  pages.forEach(function(ops,pi){
+    var pn=first+pi*2, cn=pn+1, sc='';
+    ops.forEach(function(o){
+      if(o.k==='t'){
+        sc+=o.c[0].toFixed(3)+' '+o.c[1].toFixed(3)+' '+o.c[2].toFixed(3)+' rg\n';
+        sc+='BT /'+(o.bold?'F2':'F1')+' '+o.size+' Tf 1 0 0 1 '+o.x.toFixed(2)+' '+o.y.toFixed(2)+' Tm ('+pdfEsc(winAnsi(o.s))+') Tj ET\n';
+      } else {
+        sc+=o.c[0].toFixed(3)+' '+o.c[1].toFixed(3)+' '+o.c[2].toFixed(3)+' RG '+o.w+' w\n';
+        sc+=o.x1.toFixed(2)+' '+o.y.toFixed(2)+' m '+o.x2.toFixed(2)+' '+o.y.toFixed(2)+' l S\n';
+      }
+    });
+    objs[pn-1]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+PW+' '+PH+'] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents '+cn+' 0 R >>';
+    objs[cn-1]='<< /Length '+sc.length+' >>\nstream\n'+sc+'endstream';
+    kids.push(pn+' 0 R');
+  });
+  objs[1]='<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+pages.length+' >>';
+
+  var out='%PDF-1.4\n', offs=[];
+  for(var i=0;i<objs.length;i++){ offs.push(out.length); out+=(i+1)+' 0 obj\n'+objs[i]+'\nendobj\n'; }
+  var xr=out.length;
+  out+='xref\n0 '+(objs.length+1)+'\n0000000000 65535 f \n';
+  offs.forEach(function(o){ out+=String(o).padStart(10,'0')+' 00000 n \n'; });
+  out+='trailer\n<< /Size '+(objs.length+1)+' /Root 1 0 R >>\nstartxref\n'+xr+'\n%%EOF';
+  var by=new Uint8Array(out.length);
+  for(var j=0;j<out.length;j++) by[j]=out.charCodeAt(j)&0xFF;
+  return by;
+}
+function qBlocks(withAnswers){
+  var b=[], isFr=LANG==='fr';
+  b.push({k:'sub',t:isFr
+    ? 'L’objectif de ce questionnaire est de recueillir les informations essentielles permettant de comprendre le profil de la Fondation Kibira et d’identifier les opportunités de financement qui lui correspondent réellement.'
+    : 'The purpose of this questionnaire is to gather the essential information needed to understand Fondation Kibira’s profile and identify the funding opportunities that genuinely match it.'});
+  SECTIONS.forEach(function(s){
+    if(!s.qs||!s.qs.length) return;
+    b.push({k:'h',t:L(s.title).toUpperCase()});
+    s.qs.forEach(function(q){
+      b.push({k:'q',n:qNumber(q.id),t:L(q.q)});
+      if(q.h) b.push({k:'hint',t:L(q.h)});
+      var v=resolved(q.id);
+      if(withAnswers&&v!=null&&v!==''&&!(Array.isArray(v)&&!v.length)){
+        fmtVal(v).split('\n').forEach(function(ln){ b.push({k:'ans',t:ln}); });
+      }
+      else if(q.t==='group'){
+        b.push({k:'hint',t:q.fields.map(function(f){return L(f.l);}).join('  ·  ')});
+        b.push({k:'blank',n:6});
+      }
+      else if(q.t==='one'||q.t==='many'){ q.o.forEach(function(o){ b.push({k:'opt',t:L(o)}); }); b.push({k:'gap',n:4}); }
+      else b.push({k:'blank',n:q.t==='long'?3:1});
+    });
+  });
+  return b;
+}
+function toText(blocks,title){
+  return title+'\n\n'+blocks.map(function(x){
+    if(x.k==='h') return '\n\n== '+x.t+' ==';
+    if(x.k==='q') return '\n'+(x.n?x.n+'. ':'')+x.t;
+    if(x.k==='opt') return '   [ ] '+x.t;
+    if(x.k==='hint') return '   '+x.t;
+    if(x.k==='ans') return '   > '+x.t;
+    return x.t||'';
+  }).join('\n');
+}
+function exportQuestionnairePDF(){
+  var isFr=LANG==='fr';
+  var title=isFr?'Fondation Kibira — Questions pour établir le profil de financement':'Fondation Kibira — Questions for the funding profile';
+  var bl=qBlocks(false), by;
+  try{ by=makePDF(title,bl); }catch(e){ toast(isFr?'Le PDF n’a pas pu être produit.':'The PDF could not be produced.'); return; }
+  deliver('fondation-kibira-questionnaire-'+stamp()+'.pdf',by,'application/pdf',
+          'fondation-kibira-questionnaire-'+stamp()+'.txt',toText(bl,title))
+    .then(function(r){ report(r, isFr?'PDF téléchargé.':'PDF downloaded.'); });
+}
+function pBlocks(){
+  var isFr=LANG==='fr', b=[];
+  function prose(t,fb){ b.push({k:'p',t:t||(isFr?('['+fb+' à compléter]'):('['+fb+' to be completed]'))}); }
+  function labelled(l,id,sfx){
+    if(!has(id)) return;
+    b.push({k:'q',t:l});
+    fmtVal(resolved(id)).split('\n').forEach(function(ln){ b.push({k:'ans',t:ln+(sfx||'')}); });
+  }
+  function items(id,titleKey,fields){
+    if(!has(id)) return;
+    getA(id).forEach(function(o){
+      b.push({k:'q',t:String(o[titleKey]||'—')});
+      fields.forEach(function(f){
+        if(f.k===titleKey) return;
+        var v=String(o[f.k]||'').trim(); if(!v) return;
+        b.push({k:'ans',t:L(f.l)+' : '+v});
+      });
+      b.push({k:'gap',n:3});
+    });
+  }
+  var doneF=SECTIONS.filter(function(x){return x.id==='experience';})[0].qs[0].fields;
+  var futF=SECTIONS.filter(function(x){return x.id==='financer';})[0].qs[1].fields;
+
+  var contact=[];
+  ['org_website','org_email','org_phone','org_address'].forEach(function(k){ if(has(k)) contact.push(raw(k)); });
+  if(has('org_social')) getA('org_social').forEach(function(o){
+    var t=[o.plateforme,o.lien].filter(function(x){return String(x||'').trim()!=='';}).join(' ');
+    if(t) contact.push(t);
+  });
+  if(contact.length) b.push({k:'sub',t:contact.join('  ·  ')});
+
+  b.push({k:'h',t:isFr?'QUI NOUS SOMMES':'WHO WE ARE'});
+  prose(has('mission')?raw('mission'):null, isFr?'Mission':'Mission');
+  prose(narrIdentity(), isFr?'Identité':'Identity');
+
+  b.push({k:'h',t:isFr?'NOTRE TRAVAIL':'OUR WORK'});
+  prose(narrWork(), isFr?'Domaines d’intervention':'Fields of work');
+  labelled(isFr?'Priorités pour les deux à trois prochaines années':'Priorities for the next two to three years','priorities');
+
+  b.push({k:'h',t:isFr?'NOTRE EXPÉRIENCE':'OUR TRACK RECORD'});
+  prose(narrTrack(), isFr?'Expérience':'Track record');
+  items('projects_done','nom',doneF);
+  labelled(isFr?'Résultats que nous mettons en avant':'The results we put forward','achievements');
+  labelled(isFr?'Partenaires et bailleurs':'Partners and funders','partners_past');
+
+  b.push({k:'h',t:isFr?'NOTRE CAPACITÉ':'OUR CAPACITY'});
+  prose(narrCapacity(), isFr?'Capacité financière':'Financial capacity');
+  labelled(isFr?'Préfinancement':'Pre-financing','prefinance');
+  labelled(isFr?'Audit externe':'External audit','audit');
+
+  b.push({k:'h',t:isFr?'TRAVAILLER AVEC NOUS':'WORKING WITH US'});
+  prose(narrPartnership(), isFr?'Partenariats':'Partnerships');
+
+  b.push({k:'h',t:isFr?'CE QUE NOUS CHERCHONS À FINANCER':'WHAT WE ARE SEEKING TO FUND'});
+  prose(narrSeeking(), isFr?'Projets à financer':'Projects seeking funding');
+  items('project_details','titre',futF);
+
+  b.push({k:'h',t:isFr?'POURQUOI LA FONDATION KIBIRA':'WHY FONDATION KIBIRA'});
+  prose(narrPositioning(), isFr?'Positionnement':'Positioning');
+  labelled(isFr?'Hors périmètre':'Out of scope','no_go');
+
+  b.push({k:'h',t:isFr?'NOUS CONTACTER':'CONTACT US'});
+  labelled(isFr?'Personne de contact':'Contact person','resp_name');
+  labelled(isFr?'Fonction':'Role','resp_role');
+  labelled(isFr?'Courriel':'Email','resp_email');
+  labelled(isFr?'Courriel général':'General email','org_email');
+  labelled(isFr?'Téléphone':'Telephone','org_phone');
+  labelled(isFr?'Site web':'Website','org_website');
+  labelled(isFr?'Siège':'Address','org_address');
+  labelled(isFr?'Réseaux sociaux':'Social media','org_social');
+  return b;
+}
+function profileText(){
+  var t=ORG+'\n\n';
+  pBlocks().forEach(function(x){
+    if(x.k==='h') t+='\n\n## '+x.t+'\n';
+    else if(x.k==='q') t+='\n**'+x.t+'**  \n';
+    else t+=x.t+'\n';
+  });
+  return t;
+}
+function exportProfilePDF(){
+  var isFr=LANG==='fr', by;
+  try{ by=makePDF(ORG, pBlocks()); }
+  catch(e){ toast(isFr?'Le PDF n’a pas pu être produit.':'The PDF could not be produced.'); return; }
+  deliver('fondation-kibira-profil-'+stamp()+'.pdf',by,'application/pdf',
+          'fondation-kibira-profil-'+stamp()+'.md',profileText())
+    .then(function(r){ report(r, isFr?'Profil téléchargé.':'Profile downloaded.'); });
+}
+function exportProfileMD(){
+  deliver('fondation-kibira-profil-'+stamp()+'.md',profileText(),'text/markdown')
+    .then(function(r){ report(r, LANG==='fr'?'Version texte téléchargée.':'Text version downloaded.'); });
+}
+
+/* ================= startup ================= */
+function icon(d){ return '<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+d+'</svg>'; }
+function renderFoot(){
+  var f=document.getElementById('railfoot'); f.innerHTML='';
+  [[T('save'), icon('<path d="M10 3v9M6.5 8.5L10 12l3.5-3.5"/><path d="M4 15h12"/>'), exportSave],
+   [T('download'), icon('<path d="M5 3h7l3 3v11H5z"/><path d="M8 10h4M8 13h4"/>'), exportQuestionnairePDF],
+   [T('upload'), icon('<path d="M10 16V7M6.5 10.5L10 7l3.5 3.5"/><path d="M4 4h12"/>'), function(){ document.getElementById('filein').click(); }],
+   [T('profile'), icon('<circle cx="10" cy="7" r="2.6"/><path d="M4.5 16c.7-3 2.9-4.4 5.5-4.4s4.8 1.4 5.5 4.4"/>'), function(){ go(SECTIONS.length-1); }],
+   [T('reset'), icon('<path d="M6 6l8 8M14 6l-8 8"/>'), function(){ document.getElementById('dlgReset').showModal(); }]
+  ].forEach(function(it){
+    var b=el('button','railbtn'); b.type='button';
+    b.innerHTML=it[1]+'<span>'+esc(it[0])+'</span>'; b.onclick=it[2]; f.appendChild(b);
+  });
+}
+function setLang(l,silent){
+  LANG=(l==='en')?'en':'fr';
+  document.documentElement.lang=LANG;
+  [].forEach.call(document.querySelectorAll('[data-lang]'),function(b){
+    b.setAttribute('aria-pressed', b.getAttribute('data-lang')===LANG?'true':'false');
+  });
+  var bs=document.querySelector('[data-i="brandsub"]'); if(bs) bs.textContent=T('brandsub');
+  document.querySelector('[data-i="progress"]').textContent=T('progress');
+  if(!silent){ persist(); renderFoot(); refreshProgress(); renderSection(current); flagSaved(); }
+}
+function init(){
+  load();
+  document.documentElement.lang=LANG;
+  [].forEach.call(document.querySelectorAll('[data-lang]'),function(b){
+    b.onclick=function(){ setLang(b.getAttribute('data-lang')); };
+    b.setAttribute('aria-pressed', b.getAttribute('data-lang')===LANG?'true':'false');
+  });
+  document.getElementById('menubtn').onclick=function(){ document.getElementById('rail').classList.toggle('collapsed'); };
+  if(window.innerWidth<=900) document.getElementById('rail').classList.add('collapsed');
+
+  var fi=el('input'); fi.type='file'; fi.id='filein'; fi.accept='.json,.pdf,.docx,.png,.jpg,.jpeg'; fi.style.display='none';
+  fi.onchange=function(){ if(fi.files&&fi.files[0]) handleUpload(fi.files[0]); fi.value=''; };
+  document.body.appendChild(fi);
+
+  var dlg=el('dialog'); dlg.id='dlgReset';
+  dlg.innerHTML='<div class="dlg"><h3></h3><p></p><div class="dlg-actions">'+
+    '<button type="button" class="btn" value="no"></button>'+
+    '<button type="button" class="btn primary" value="yes"></button></div></div>';
+  document.body.appendChild(dlg);
+  var show=dlg.showModal.bind(dlg);
+  dlg.showModal=function(){
+    var fr=LANG==='fr';
+    dlg.querySelector('h3').textContent=fr?'Tout effacer ?':'Clear everything?';
+    dlg.querySelector('p').textContent=fr
+      ? 'Toutes les réponses enregistrées sur cet appareil seront supprimées. Sauvegardez d’abord un fichier si vous souhaitez pouvoir revenir en arrière.'
+      : 'Every answer stored on this device will be deleted. Save a file first if you want to be able to come back.';
+    dlg.querySelector('[value="no"]').textContent=fr?'Annuler':'Cancel';
+    dlg.querySelector('[value="yes"]').textContent=fr?'Effacer':'Clear';
+    show();
+  };
+  dlg.addEventListener('click',function(e){
+    if(e.target.value==='no') dlg.close();
+    if(e.target.value==='yes'){
+      STATE.a={}; persist(); flagSaved(); refreshProgress(); renderSection(current); dlg.close();
+      toast(LANG==='fr'?'Questionnaire remis à zéro.':'Questionnaire cleared.');
+    }
+  });
+
+  window.addEventListener('dragover',function(e){ e.preventDefault(); });
+  window.addEventListener('drop',function(e){
+    e.preventDefault();
+    if(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0]) handleUpload(e.dataTransfer.files[0]);
+  });
+
+  renderFoot(); refreshProgress(); flagSaved();
+  var resumed=Object.keys(STATE.a).length>0;
+  go(resumed?1:0);
+  if(resumed) setTimeout(function(){
+    toast(LANG==='fr'?'Vos réponses précédentes ont été retrouvées.':'Your earlier answers were found.');
+  },600);
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+</script>
+</body>
+</html>
