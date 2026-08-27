@@ -213,6 +213,17 @@ dialog::backdrop{background:rgba(12,22,20,.6)}
 .note{background:var(--notice-soft); border:1px solid color-mix(in srgb, var(--notice) 34%, transparent); border-radius:10px; padding:13px 15px; font-size:14.2px; color:var(--ink-2)}
 .note b{color:var(--ink)}
 
+.submitbox{
+  margin-top:30px; border:1px solid var(--green); background:var(--green-soft);
+  border-radius:13px; padding:24px 26px; display:flex; flex-direction:column; gap:14px; align-items:flex-start;
+}
+.submitbox h3{font-size:22px; font-weight:600; color:var(--display)}
+.submitbox p{margin:0; font-size:15.4px; color:var(--ink-2); max-width:58ch; line-height:1.6}
+.submit-status{font-size:14.6px; font-weight:600; margin:0}
+.submit-status.ok{color:var(--green-ink)}
+.submit-status.warn{color:var(--notice)}
+.submit-status.err{color:var(--clay)}
+.submit-alt{font-size:13.8px; color:var(--ink-3) !important; border-top:1px solid var(--line); padding-top:13px; width:100%}
 .open-lede{font-size:19.5px; line-height:1.55; color:var(--ink); max-width:57ch; margin:18px 0 0; font-family:Newsreader,serif; font-weight:400}
 .open-meta{display:flex; gap:24px; flex-wrap:wrap; margin-top:26px; font-size:14.4px; color:var(--ink-2)}
 .open-meta div{display:flex; align-items:center; gap:9px}
@@ -250,6 +261,8 @@ dialog::backdrop{background:rgba(12,22,20,.6)}
   body{background:#fff; color:#000}
 }
 </style>
+</head>
+<body>
 </head>
 <body>
 </head>
@@ -492,7 +505,7 @@ SECTIONS.push({
   id:'envoi', kind:'finish',
   nav:'Coordonnées|Contact details',
   title:'Coordonnées et transmission|Contact details and submission',
-  intro:'Ces coordonnées figureront sur le profil d’organisation que vous pourrez adresser à un bailleur. Vos réponses restent enregistrées sur cet appareil : pour nous les transmettre, téléchargez le fichier de sauvegarde et envoyez-le-nous.|These details will appear on the organisation profile you can send to a funder. Your answers stay stored on this device: to send them to us, download the save file and forward it.',
+  intro:'Ces coordonnées figureront sur le profil d’organisation que vous pourrez adresser à un bailleur. Renseignez-les, puis envoyez vos réponses à l’aide du bouton en bas de cette page.|These details will appear on the organisation profile you can send to a funder. Fill them in, then send your answers using the button at the foot of this page.',
   qs:[
     {id:'org_website', t:'text', q:'Site web de la Fondation|Foundation website', ph:'www.'},
     {id:'org_email', t:'text', q:'Adresse électronique générale|General email address'},
@@ -728,6 +741,7 @@ function renderSection(i){
       list.appendChild(card);
     });
     m.appendChild(list);
+    if(s.kind==='finish') renderSubmit(m);
   }
   var pg=el('div','pager');
   var back=el('button','btn'); back.type='button'; back.textContent=T('prev');
@@ -764,6 +778,85 @@ function renderBrief(m){
   cta.style.marginTop='32px'; cta.textContent=isFr?'Commencer':'Begin';
   cta.onclick=function(){ go(1); };
   m.appendChild(cta);
+}
+
+/* ================= submission ================= */
+var ENDPOINT='https://script.google.com/macros/s/AKfycbyuz5-bhV8_th56y55Nk3o6c6JvN93uB9x6MSTewaVFNKq-KMAMSBOaBOTs0V-qNRCP/exec';
+var SENT_KEY='fk-funding-profile-sent';
+
+function sentAt(){ try{ return localStorage.getItem(SENT_KEY)||''; }catch(e){ return ''; } }
+function markSent(){ try{ localStorage.setItem(SENT_KEY, new Date().toISOString()); }catch(e){} }
+
+function renderSubmit(m){
+  var isFr=LANG==='fr', o=overall();
+  var box=el('div','submitbox');
+  box.innerHTML =
+    '<h3>'+(isFr?'Envoyer vos réponses':'Send your answers')+'</h3>'+
+    '<p>'+(isFr
+      ? 'Tant que vous n’avez pas cliqué sur ce bouton, vos réponses restent uniquement sur cet appareil et ne nous parviennent pas.'
+      : 'Until you press this button your answers stay on this device only and do not reach us.')+'</p>';
+  var btn=el('button','btn primary big'); btn.type='button';
+  btn.textContent=isFr?'Envoyer mes réponses':'Send my answers';
+  var status=el('p','submit-status');
+  var prev=sentAt();
+  if(prev){
+    var d=new Date(prev);
+    status.className='submit-status ok';
+    status.textContent=(isFr?'Déjà envoyé le ':'Already sent on ')+
+      d.toLocaleDateString(isFr?'fr-FR':'en-GB')+(isFr?' à ':' at ')+
+      d.toLocaleTimeString(isFr?'fr-FR':'en-GB',{hour:'2-digit',minute:'2-digit'})+
+      (isFr?'. Vous pouvez renvoyer une version corrigée.':'. You can send a corrected version.');
+  }
+  btn.onclick=function(){
+    btn.disabled=true;
+    status.className='submit-status';
+    status.textContent=isFr?'Envoi en cours…':'Sending…';
+    var payload=JSON.stringify({lang:LANG, progress:overall().p, a:STATE.a});
+    /* plain string body => text/plain => a simple request, no preflight */
+    fetch(ENDPOINT,{method:'POST',body:payload})
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if(j&&j.ok){ done(); }
+        else { throw new Error(j&&j.error?j.error:'refus du serveur'); }
+      })
+      .catch(function(){
+        /* the reply could not be read; send again opaquely so the data
+           still arrives, then say plainly that we cannot confirm it */
+        return fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:payload})
+          .then(function(){ doneUnconfirmed(); })
+          .catch(function(){ failed(); });
+      });
+    function done(){
+      markSent(); btn.disabled=false;
+      status.className='submit-status ok';
+      status.textContent=isFr
+        ? 'Réponses bien reçues. Merci.'
+        : 'Answers received. Thank you.';
+      toast(isFr?'Vos réponses nous sont parvenues.':'Your answers have reached us.');
+    }
+    function doneUnconfirmed(){
+      markSent(); btn.disabled=false;
+      status.className='submit-status warn';
+      status.textContent=isFr
+        ? 'Envoi effectué, mais la confirmation n’a pas pu être lue. Par précaution, téléchargez aussi la sauvegarde et envoyez-la-nous.'
+        : 'Sent, but the confirmation could not be read. As a precaution, download the save file as well and send it to us.';
+    }
+    function failed(){
+      btn.disabled=false;
+      status.className='submit-status err';
+      status.textContent=isFr
+        ? 'L’envoi a échoué — probablement la connexion. Réessayez, ou téléchargez la sauvegarde et envoyez-la-nous par courriel.'
+        : 'Sending failed — most likely the connection. Try again, or download the save file and email it to us.';
+    }
+  };
+  box.appendChild(btn);
+  box.appendChild(status);
+  var alt=el('p','submit-alt');
+  alt.innerHTML=(isFr
+    ? 'Connexion instable&nbsp;? Utilisez <b>Sauvegarder pour reprendre</b> dans le menu de gauche et envoyez-nous le fichier obtenu.'
+    : 'Unstable connection? Use <b>Save to continue later</b> in the left-hand menu and send us the file it produces.');
+  box.appendChild(alt);
+  m.appendChild(box);
 }
 
 /* ================= organisation profile ================= */
