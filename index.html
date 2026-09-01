@@ -272,6 +272,8 @@ dialog::backdrop{background:rgba(12,22,20,.6)}
 <body>
 </head>
 <body>
+</head>
+<body>
 <div class="topbar">
   <div class="brand">
     <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true">
@@ -1259,6 +1261,7 @@ function makePDF(title, blocks){
     else if(b.k==='hint'){ txt(b.t,{size:8.4,col:GOLD,ind:14,lh:11.5}); }
     else if(b.k==='opt'){ txt('[  ]  '+b.t,{size:9,ind:14,lh:12.5}); }
     else if(b.k==='ans'){ txt(b.t,{size:9.4,ind:14,lh:13}); gap(2); }
+    else if(b.k==='p'){ txt(b.t,{size:9.8,lh:14}); gap(5); }
     else if(b.k==='blank'){ lines(b.n||2); }
     else if(b.k==='gap'){ gap(b.n||8); }
   });
